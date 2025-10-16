@@ -62,12 +62,8 @@ jobs:
 
       - name: 📦 Export modpack
         run: |
-          curl https://github.com/juraj-hrivnak/pakku/releases/latest/download/pakku.jar -o pakku.jar -L -J
           java -jar pakku.jar --version
           echo 'running fetch'
           java -jar pakku.jar --debug fetch
           echo 'running export'
           java -jar pakku.jar --debug export
-
-          mkdir -p .pakku/multimc-overrides/flame
-          mkdir -p .pakku/multimc-overrides/mods
